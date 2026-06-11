@@ -511,6 +511,7 @@ struct SDSegmentedStainViewDistanceStruct {
 {
     [super willMoveToWindow:newWindow];
     [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 - (void)setArrowSize:(CGFloat)arrowSize
@@ -534,6 +535,7 @@ struct SDSegmentedStainViewDistanceStruct {
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
     self.scrollView.frame = self.bounds;
     [self layoutSegments];
 }
@@ -1267,6 +1269,7 @@ struct SDSegmentedStainViewDistanceStruct {
 - (void)didMoveToSuperview
 {
     [super didMoveToSuperview];
+    
     self.isNewCircleView = [[UIView alloc] init];
     self.isNewCircleView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.isNewCircleView];

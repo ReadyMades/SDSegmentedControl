@@ -553,7 +553,7 @@ struct SDSegmentedStainViewDistanceStruct {
     // Apply total to scrollView
     __block CGFloat currentItemPosition = 0;
     CGSize contentSize = self.scrollView.contentSize;
-    if (totalWidth > self.bounds.size.width)
+    if (totalWidth >= self.bounds.size.width)
     {
         // We must scroll, so add an offset
         totalWidth += 2 * self.scrollOffset;
